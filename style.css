@@ -1,0 +1,48 @@
+body {
+    background-color: black;
+    color: white;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.rifa {
+    width: 900px;
+    margin: 50px auto;
+    border: 2px #5d87a8 solid;
+    background-color: #6897BB;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tituloRifa {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dados, .premio, .info {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.label {
+    font-weight: bold;
+    flex: 1;
+}
+
+.content {
+    flex: 2;
+    text-align: left;
+}
+
+.premio .content, .info .content {
+    text-align: right;
+}
