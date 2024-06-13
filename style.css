@@ -1,48 +1,44 @@
 body {
-    background-color: black;
-    color: white;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
 }
 
-.rifa {
-    width: 900px;
-    margin: 50px auto;
-    border: 2px #5d87a8 solid;
-    background-color: #6897BB;
-    padding: 30px;
-    border-radius: 20px;
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.tituloRifa {
-    text-align: center;
-    margin-bottom: 30px;
-}
 
-.dados, .premio, .info {
-    display: flex;
+
+h1 {
+    display: block;
     width: 100%;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
-.label {
-    font-weight: bold;
-    flex: 1;
-}
-
-.content {
-    flex: 2;
-    text-align: left;
-}
-
-.premio .content, .info .content {
-    text-align: right;
+h1:hover {
+    background-color: #0056b3;
 }

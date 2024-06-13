@@ -10,9 +10,8 @@
 
 <body>
 
-    <h1>Converter temperatura</h1>
     <form action="temperatura.php" method="POST">
-        <label for="temperatura">Temperatura</label>
+        <label for="temperatura">Converter Temperatura</label>
         <input type="number" id="temperatura" name="temperatura" step="0.1" required>
 
         <select id="de_unidade" name="de_unidade">
@@ -66,3 +65,55 @@
 </body>
 
 </html>
+<style>body {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+form {
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="number"], select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    background-color: #444444;
+    color: #ffffff;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+}</style>
