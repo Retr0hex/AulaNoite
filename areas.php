@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="areas.css">
     <title>Calculadora de Áreas</title>
     <script>
         function updateInputs() {
@@ -38,67 +38,60 @@
 </head>
 
 <body>
+    <div class="container">
+        <h1>Calculadora de Áreas</h1>
+        <form action="" method="POST" class="form">
+            <label for="forma">Escolha a forma</label>
+            <select id="forma" name="forma" onchange="updateInputs()" required>
+                <option value="">Selecione</option>
+                <option value="retangulo">Retângulo</option>
+                <option value="triangulo">Triângulo</option>
+                <option value="circulo">Círculo</option>
+            </select>
+            <div id="inputs"></div>
+            <input type="submit" id="calcular" name="calcular" value="Calcular" class="btn">
+        </form>
 
-    <h1>Calculadora de Áreas</h1>
-    <form action="" method="POST">
-        <label for="forma">Escolha a forma</label>
-        <select id="forma" name="forma" onchange="updateInputs()" required>
-            <option value="">Selecione</option>
-            <option value="retangulo">Retângulo</option>
-            <option value="triangulo">Triângulo</option>
-            <option value="circulo">Círculo</option>
-        </select>
-        <br><br>
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $forma = $_POST['forma'];
+            $area = 0;
 
-        <div id="inputs">
-          
-        </div>
-
-        <br><br>
-        <input type="submit" id="calcular" name="calcular" value="Calcular">
-    </form>
-    <br><br>
-
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $forma = $_POST['forma'];
-        $area = 0;
-
-        if ($forma == "retangulo") {
-            $largura = $_POST['largura'];
-            $altura = $_POST['altura'];
-            if (is_numeric($largura) && is_numeric($altura)) {
-                $area = $largura * $altura;
+            if ($forma == "retangulo") {
+                $largura = $_POST['largura'];
+                $altura = $_POST['altura'];
+                if (is_numeric($largura) && is_numeric($altura)) {
+                    $area = $largura * $altura;
+                } else {
+                    echo "Digite valores válidos para altura e largura.";
+                    exit();
+                }
+            } elseif ($forma == "triangulo") {
+                $base = $_POST['base'];
+                $altura = $_POST['altura'];
+                if (is_numeric($base) && is_numeric($altura)) {
+                    $area = ($base * $altura) / 2;
+                } else {
+                    echo "Digite valores válidos para base e altura.";
+                    exit();
+                }
+            } elseif ($forma == "circulo") {
+                $raio = $_POST['raio'];
+                if (is_numeric($raio)) {
+                    $area = pi() * pow($raio, 2);
+                } else {
+                    echo "Digite um valor válido para raio.";
+                    exit();
+                }
             } else {
-                echo "Digite valores válidos para altura e largura.";
+                echo "Por favor, selecione uma forma válida.";
                 exit();
             }
-        } elseif ($forma == "triangulo") {
-            $base = $_POST['base'];
-            $altura = $_POST['altura'];
-            if (is_numeric($base) && is_numeric($altura)) {
-                $area = ($base * $altura) / 2;
-            } else {
-                echo "Digite valores válidos para base e altura.";
-                exit();
-            }
-        } elseif ($forma == "circulo") {
-            $raio = $_POST['raio'];
-            if (is_numeric($raio)) {
-                $area = pi() * pow($raio, 2);
-            } else {
-                echo "Digite um valor válido para raio.";
-                exit();
-            }
-        } else {
-            echo "Por favor, selecione uma forma válida.";
-            exit();
+
+            echo "<div class='result'>Área calculada: $forma de $area cm<sup>2</sup></div>";
         }
-
-        echo "<label for='area'>Área calculada: $forma de $area cm<sup>2</sup></label>";
-    }
-    ?>
-
+        ?>
+    </div>
 </body>
 
 </html>
