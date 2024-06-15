@@ -27,6 +27,11 @@ body {
     }
 }
 
+
+
+
+
+
 .container {
     max-width: 600px;
     margin: 50px auto;
@@ -64,4 +69,14 @@ body {
 h1 {
     text-align: center;
     color: #ffffff;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: transparent;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
 }

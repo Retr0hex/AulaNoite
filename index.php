@@ -22,6 +22,9 @@
             <a href="gorjeta.php"><h1>Cálculo de Gorjeta</h1></a>
         </div>
     </div>
+    <footer>
+    <p>&copy; 2024 Vitor </p>
+</footer>
 </body>
 
 </html>
